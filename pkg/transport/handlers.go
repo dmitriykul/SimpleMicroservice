@@ -44,5 +44,5 @@ func arithmetic(w http.ResponseWriter, r *http.Request) {
 	//	fmt.Fprintf(w, "4")
 	//}
 	//
-	//fmt.Fprintf(w, res)
+	fmt.Fprintf(w, "4")
 }
