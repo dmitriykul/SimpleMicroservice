@@ -1,16 +1,23 @@
 package main
 
 import (
+	"SimpleMicroservice/pkg/transport"
 	"fmt"
+	log "github.com/sirupsen/logrus"
 	"net/http"
 	"os"
 )
 
-func main() {
-	port := os.Getenv("PORT")
+type expression struct {
+	exp string
+}
 
-	http.HandleFunc("/hello", func(w http.ResponseWriter, _ *http.Request) {
-		fmt.Fprintf(w, "World")
-	})
-	http.ListenAndServe(":"+port, nil)
+const serverUrl = ":8000"
+
+func main() {
+	log.SetFormatter(&log.JSONFormatter{})
+	log.SetOutput(os.Stdout)
+	log.WithFields(log.Fields{"url": serverUrl}).Info("starting the server")
+	r := transport.Router()
+	fmt.Println(http.ListenAndServe(serverUrl, r))
 }
