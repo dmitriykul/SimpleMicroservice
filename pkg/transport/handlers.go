@@ -33,7 +33,7 @@ func health(w http.ResponseWriter, _ *http.Request) {
 
 func arithmetic(w http.ResponseWriter, r *http.Request) {
 	str := r.Body
-	if r == "2+2"{
+	if str == "2+2"{
 		fmt.Fprintf(w, "4")
 	}
 	fmt.Fprintf(w, "4")
