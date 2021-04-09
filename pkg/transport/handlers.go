@@ -31,6 +31,7 @@ func health(w http.ResponseWriter, _ *http.Request) {
 	fmt.Fprintf(w, "200")
 }
 
-func arithmetic(w http.ResponseWriter, _ *http.Request){
+func arithmetic(w http.ResponseWriter, _ *http.Request) int{
 
+	return 4
 }
