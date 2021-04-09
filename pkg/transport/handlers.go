@@ -25,6 +25,6 @@ func logMiddleWare(h http.Handler) http.Handler {
 	})
 }
 
-func health() {
-
+func health(w http.ResponseWriter, _ *http.Request) {
+	
 }
