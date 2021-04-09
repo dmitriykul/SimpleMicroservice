@@ -1,6 +1,7 @@
 package main
 
 import (
+	"SimpleMicroservice/pkg/transport"
 	"net/http"
 	"os"
 )
@@ -20,6 +21,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 
-	http.ListenAndServe(":"+port, nil)
+	r := transport.Router()
+	http.ListenAndServe(":"+port, r)
 
 }

@@ -34,7 +34,7 @@ func health(w http.ResponseWriter, _ *http.Request) {
 func arithmetic(w http.ResponseWriter, r *http.Request) {
 	//str := r.Body
 	//res := 0
-
+	//
 	//str, err := ioutil.ReadAll(req.Body)
 	//if err != nil {
 	//	panic(err)
