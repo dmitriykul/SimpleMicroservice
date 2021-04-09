@@ -20,4 +20,9 @@ func main() {
 	log.WithFields(log.Fields{"url": serverUrl}).Info("starting the server")
 	r := transport.Router()
 	fmt.Println(http.ListenAndServe(serverUrl, r))
+
+	port := os.Getenv("PORT")
+
+	http.ListenAndServe(":"+port, nil)
+
 }
