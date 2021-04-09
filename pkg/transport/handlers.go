@@ -10,8 +10,8 @@ import (
 func Router() http.Handler {
 	r := mux.NewRouter()
 	s := r.PathPrefix("/api/v1").Subrouter()
-	s.HandleFunc("/health", health).Methods(http.MethodGet)
-	s.HandleFunc("/arithmetic", arithmetic).Methods(http.MethodGet)
+	s.HandleFunc("/health", health).Methods(http.MethodHead)
+	s.HandleFunc("/arithmetic", arithmetic).Methods(http.MethodPost)
 	return logMiddleWare(r)
 }
 
@@ -32,9 +32,17 @@ func health(w http.ResponseWriter, _ *http.Request) {
 }
 
 func arithmetic(w http.ResponseWriter, r *http.Request) {
-	str := r.Body
-	if str == "2+2"{
-		fmt.Fprintf(w, "4")
-	}
-	fmt.Fprintf(w, "4")
+	//str := r.Body
+	//res := 0
+
+	//str, err := ioutil.ReadAll(req.Body)
+	//if err != nil {
+	//	panic(err)
+	//}
+	//
+	//if str == "2+2"{
+	//	fmt.Fprintf(w, "4")
+	//}
+	//
+	//fmt.Fprintf(w, res)
 }
