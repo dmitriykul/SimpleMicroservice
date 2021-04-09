@@ -9,7 +9,7 @@ import (
 
 func Router() http.Handler {
 	r := mux.NewRouter()
-	s := r.PathPrefix("api/v1").Subrouter()
+	s := r.PathPrefix("/api/v1").Subrouter()
 	s.HandleFunc("/health", health).Methods(http.MethodGet)
 	return logMiddleWare(r)
 }
